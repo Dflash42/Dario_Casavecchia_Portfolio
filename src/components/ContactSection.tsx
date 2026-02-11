@@ -36,17 +36,17 @@ const ContactSection = () => {
 
           {/* Contact Info */}
           <div className="flex flex-col items-center gap-4 text-muted-foreground">
-            <a href="mailto:john@example.com" className="flex items-center gap-3 hover:text-primary transition-colors">
+            <a href="mailto:mj.dario04@gmail.com" className="flex items-center gap-3 hover:text-primary transition-colors">
               <Mail size={20} />
-              <span>john@example.com</span>
+              <span>mj.dario04@gmail.com</span>
             </a>
-            <a href="tel:+1234567890" className="flex items-center gap-3 hover:text-primary transition-colors">
+            <a href="tel:+39 331-249-2085" className="flex items-center gap-3 hover:text-primary transition-colors">
               <Phone size={20} />
-              <span>+1 234 567 890</span>
+              <span>+39 331-249-2085</span>
             </a>
             <div className="flex items-center gap-3">
               <MapPin size={20} />
-              <span>Rome, Italy</span>
+              <span>Via Emilio Bianchi 35, 23807 Merate (LC), Italy</span>
             </div>
           </div>
         </motion.div>

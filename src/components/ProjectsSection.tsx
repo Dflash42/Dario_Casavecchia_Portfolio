@@ -16,7 +16,7 @@ const projects = [
     description:
       "Real-time collaborative task board with drag-and-drop, notifications, and team workspaces.",
     tags: ["TypeScript", "Next.js", "WebSocket", "Prisma"],
-    github: "https://github.com"
+    github: "UFS13-Business Intelligence & Data Warehouse/DATA WAREHOUSE/BUSINESS INTELLIGENCE/PROGETTO/PowerBi_Pizza.pptx"
   },
   {
     title: "Analytics Dashboard",
