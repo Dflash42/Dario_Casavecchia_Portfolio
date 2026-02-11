@@ -1,7 +1,25 @@
+import { Github, Linkedin, Facebook, Instagram } from "lucide-react";
+
 const Footer = () => (
   <footer className="py-8 px-6 border-t border-border">
-    <div className="container mx-auto text-center text-sm text-muted-foreground">
-      <p>© {new Date().getFullYear()} Dario Casavecchia. All rights reserved.</p>
+    <div className="container mx-auto flex flex-col items-center gap-4">
+      <div className="flex gap-5">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+          <Github size={22} />
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+          <Linkedin size={22} />
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+          <Facebook size={22} />
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+          <Instagram size={22} />
+        </a>
+      </div>
+      <p className="text-center text-sm text-muted-foreground">
+        © {new Date().getFullYear()} Dario Casavecchia. All rights reserved.
+      </p>
     </div>
   </footer>
 );
