@@ -9,32 +9,28 @@ const projects = [
     description:
       "A full-featured online store with cart, checkout, and payment integration. Built for scale with server-side rendering.",
     tags: ["React", "Node.js", "Stripe", "PostgreSQL"],
-    github: "https://github.com",
-    live: "https://example.com",
+    github: "https://github.com"
   },
   {
     title: "Task Management App",
     description:
       "Real-time collaborative task board with drag-and-drop, notifications, and team workspaces.",
     tags: ["TypeScript", "Next.js", "WebSocket", "Prisma"],
-    github: "https://github.com",
-    live: "https://example.com",
+    github: "https://github.com"
   },
   {
     title: "Analytics Dashboard",
     description:
       "Interactive data visualization dashboard with real-time charts, filters, and CSV export.",
     tags: ["React", "D3.js", "Python", "FastAPI"],
-    github: "https://github.com",
-    live: "https://example.com",
+    github: "https://github.com"
   },
   {
     title: "AI Content Generator",
     description:
       "AI-powered tool that generates blog posts, social media content, and marketing copy using GPT APIs.",
     tags: ["React", "OpenAI", "Tailwind", "Supabase"],
-    github: "https://github.com",
-    live: "https://example.com",
+    github: "https://github.com"
   },
 ];
 
@@ -77,14 +73,6 @@ const ProjectsSection = () => {
                         className="text-muted-foreground hover:text-foreground transition-colors"
                       >
                         <Github size={18} />
-                      </a>
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-foreground transition-colors"
-                      >
-                        <ExternalLink size={18} />
                       </a>
                     </div>
                   </div>

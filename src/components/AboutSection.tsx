@@ -3,14 +3,13 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 
 const stats = [
-  { label: "Years Experience", value: "5+" },
+  { label: "Years Experience", value: "1" },
   { label: "Projects Completed", value: "30+" },
-  { label: "Happy Clients", value: "20+" },
 ];
 
 const skills = [
-  "React", "TypeScript", "Node.js", "Python", "PostgreSQL", "AWS",
-  "Docker", "GraphQL", "Next.js", "Tailwind CSS", "Git", "REST APIs",
+  "Python", "MySQL", "NOSQL", "MongoDB", "DBeaver", "PowerBI", "PostgreSQL", "AWS",
+  "Docker", "Microsoft Excel", "RStudio", "Git",
 ];
 
 const AboutSection = () => {
@@ -40,7 +39,7 @@ const AboutSection = () => {
           >
             <Avatar className="w-40 h-40 border-4 border-primary/20">
               <AvatarFallback className="text-4xl font-bold bg-primary/10 text-primary">
-                JD
+                DC
               </AvatarFallback>
             </Avatar>
             <div className="flex flex-wrap justify-center md:justify-start gap-6">
@@ -62,12 +61,12 @@ const AboutSection = () => {
             className="md:col-span-2"
           >
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              I'm a passionate full-stack developer with 5+ years of experience building 
-              web applications that solve real problems. I love turning complex challenges 
+              I'm a passionate full-stack developer with 5+ years of experience building
+              web applications that solve real problems. I love turning complex challenges
               into simple, beautiful, and intuitive solutions.
             </p>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              When I'm not coding, you'll find me exploring new technologies, contributing 
+              When I'm not coding, you'll find me exploring new technologies, contributing
               to open-source projects, or sharing knowledge through technical blog posts.
             </p>
 

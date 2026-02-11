@@ -28,7 +28,7 @@ const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground mb-4"
           >
-            John Doe<span className="text-primary">.</span>
+            Dario Casavecchia<span className="text-primary">.</span>
           </motion.h1>
 
           <motion.h2
@@ -37,7 +37,7 @@ const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-3xl md:text-5xl lg:text-6xl font-bold text-muted-foreground mb-6"
           >
-            Full-Stack Developer
+            Data Analyst
           </motion.h2>
 
           <motion.p
