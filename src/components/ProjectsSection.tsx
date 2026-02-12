@@ -34,14 +34,14 @@ const projects = [
   {
     title: "NBA Salaries Analysis",
     description: "This presentation applies statistical models to NBA salaries, analyzing distributions and performing regression tests on variables like True Shooting % and Age. It concludes that these factors significantly but only partially influence player earnings.",
-    tags: ["Excell", "Python", "RStudio"],
+    tags: ["Excell", "Python", "R", "RStudio"],
     image: "/imgs/nbasalaries.png",
     pdfLink: "/slides/nbasalaries.pdf"
   },
   {
     title: "Efficency Analysis of the NBA Players",
     description: "This project analyzes the 2023-24 NBA season efficiency of four key players using statistical variables and boxplots. It applies probability rules, including Bayes' theorem, to solve real-world problems regarding player performance and match results.",
-    tags: ["Excell", "Python", "RStudio"],
+    tags: ["Excell", "Python", "R", "RStudio"],
     image: "/imgs/stats.png",
     pdfLink: "/slides/Stats.pdf"
   },
