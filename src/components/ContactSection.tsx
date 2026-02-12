@@ -35,7 +35,7 @@ const ContactSection = () => {
 
             <Button size="lg" asChild className="gap-2 w-full sm:w-auto">
               <a
-                href="https://www.linkedin.com/in/dario-casavecchia-35674b278/"
+                href="https://www.linkedin.com/in/dario-casavecchia/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
