@@ -44,10 +44,6 @@ const ContactSection = () => {
               <Phone size={20} />
               <span>+39 331-249-2085</span>
             </a>
-            <div className="flex items-center gap-3">
-              <MapPin size={20} />
-              <span>Via Emilio Bianchi 35, 23807 Merate (LC), Italy</span>
-            </div>
           </div>
         </motion.div>
       </div>
