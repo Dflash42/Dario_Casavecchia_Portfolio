@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -43,6 +44,7 @@ const Header = () => {
               {item.label}
             </a>
           ))}
+          <ThemeToggle />
           <Button size="sm" asChild>
             <a href="#contact">Let's Talk</a>
           </Button>
@@ -70,6 +72,7 @@ const Header = () => {
               {item.label}
             </a>
           ))}
+          <ThemeToggle />
           <Button size="sm" asChild>
             <a href="#contact" onClick={() => setMobileOpen(false)}>Let's Talk</a>
           </Button>
