@@ -1,36 +1,28 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description:
-      "A full-featured online store with cart, checkout, and payment integration. Built for scale with server-side rendering.",
-    tags: ["React", "Node.js", "Stripe", "PostgreSQL"],
-    github: "https://github.com"
+    title: "Pizza Business Intelligence",
+    description: "Business intelligence analysis of a fittitius Domino's Pizza restaurant.",
+    tags: ["PowerBi", "DAX", "Excel", "SQL", "Python"],
+    image: "/imgs/pizzabi.png",
+    pdfLink: "/slides/pizzas.pdf"
   },
   {
-    title: "Task Management App",
-    description:
-      "Real-time collaborative task board with drag-and-drop, notifications, and team workspaces.",
-    tags: ["TypeScript", "Next.js", "WebSocket", "Prisma"],
-    github: "UFS13-Business Intelligence & Data Warehouse/DATA WAREHOUSE/BUSINESS INTELLIGENCE/PROGETTO/PowerBi_Pizza.pptx"
+    title: "Analysis of Monthly Fish Births in the Pacific",
+    description: "Time series analysis of monthly fish births in the Pacific Ocean.",
+    tags: ["Python", "Pandas", "Matplotlib", "Seaborn", "Scikit-learn", "Statsmodels"],
+    image: "/imgs/esamepesci.png",
+    pdfLink: "/slides/esame_pesci.pdf"
   },
   {
-    title: "Analytics Dashboard",
-    description:
-      "Interactive data visualization dashboard with real-time charts, filters, and CSV export.",
-    tags: ["React", "D3.js", "Python", "FastAPI"],
-    github: "https://github.com"
-  },
-  {
-    title: "AI Content Generator",
-    description:
-      "AI-powered tool that generates blog posts, social media content, and marketing copy using GPT APIs.",
-    tags: ["React", "OpenAI", "Tailwind", "Supabase"],
-    github: "https://github.com"
+    title: "Truck Sales Analysis",
+    description: "Analysis and forecasting of truck sales data.",
+    tags: ["Python", "Pandas", "Matplotlib", "Seaborn", "Scikit-learn", "Statsmodels"],
+    image: "/imgs/trucksales.png",
+    pdfLink: "/slides/progetto1.pdf"
   },
 ];
 
@@ -59,35 +51,39 @@ const ProjectsSection = () => {
               transition={{ duration: 0.4, delay: i * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full group hover:shadow-xl hover:border-primary/30 transition-all duration-300">
-                <CardContent className="p-6 flex flex-col h-full">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+              <a
+                href={project.pdfLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block h-full"
+              >
+                <Card className="h-full group hover:shadow-xl hover:border-primary/30 transition-all duration-300 overflow-hidden">
+                  {/* Background Image */}
+                  <div
+                    className="h-48 bg-cover bg-center relative"
+                    style={{ backgroundImage: `url(${project.image})` }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-background/20" />
+                  </div>
+
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors mb-3">
                       {project.title}
                     </h3>
-                    <div className="flex gap-3 shrink-0 ml-4">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-foreground transition-colors"
-                      >
-                        <Github size={18} />
-                      </a>
+                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <Badge key={tag} variant="outline" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
                     </div>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-4 flex-grow leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag} variant="outline" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </a>
+
             </motion.div>
           ))}
         </div>
