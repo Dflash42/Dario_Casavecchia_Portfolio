@@ -7,6 +7,13 @@ const projects = [
     title: "Pizza Business Intelligence",
     description: "Business intelligence analysis of a fittitius Domino's Pizza restaurant.",
     tags: ["PowerBi", "DAX", "Excel", "SQL", "Python"],
+    image: "/imgs/pw.png",
+    pdfLink: "/slides/pw.pdf"
+  },
+  {
+    title: "Pizza Business Intelligence",
+    description: "Business intelligence analysis of a fittitius Domino's Pizza restaurant.",
+    tags: ["PowerBi", "DAX", "Excel", "SQL", "Python"],
     image: "/imgs/pizzabi.png",
     pdfLink: "/slides/pizzas.pdf"
   },
