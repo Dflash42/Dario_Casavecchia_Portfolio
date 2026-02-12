@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Download, Mail, Phone, MapPin } from "lucide-react";
+import { Download, Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ContactSection = () => {
@@ -33,7 +33,14 @@ const ContactSection = () => {
               </a>
             </Button>
           </div>
-
+          {/* linkedin di fianco al tasto download cv*/}
+          <div className="flex justify-center">
+            <Button size="lg" asChild className="gap-2">
+              <a href="https://www.linkedin.com/in/dario-casavecchia-b8a0b8b8a/" download>
+                <Linkedin size={18} /> My LinkedIn
+              </a>
+            </Button>
+          </div>
           {/* Contact Info */}
           <div className="flex flex-col items-center gap-4 text-muted-foreground">
             <a href="mailto:mj.dario04@gmail.com" className="flex items-center gap-3 hover:text-primary transition-colors">
