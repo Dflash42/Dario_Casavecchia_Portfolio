@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import profilePhoto from "@/assets/profile-photo.jpg";
 
 const HeroSection = () => {
   return (
@@ -91,16 +90,17 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex-shrink-0"
+            className="flex-shrink-0 lg:self-center"
           >
             <div className="relative">
               {/* Decorative ring */}
               <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-primary/30 via-accent/20 to-primary/10 blur-sm" />
               <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-2 border-primary/20 shadow-2xl shadow-primary/10">
                 <img
-                  src={profilePhoto}
+                  src="/imgs/suitme1.png"
                   alt="Dario Casavecchia"
                   className="w-full h-full object-cover"
+                  style={{ objectPosition: "50% 35%" }}
                 />
               </div>
             </div>
