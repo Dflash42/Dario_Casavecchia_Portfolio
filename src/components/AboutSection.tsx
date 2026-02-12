@@ -37,11 +37,14 @@ const AboutSection = () => {
             viewport={{ once: true }}
             className="flex flex-col items-center md:items-start gap-8"
           >
-            <Avatar className="w-40 h-40 border-4 border-primary/20">
-              <AvatarFallback className="text-4xl font-bold bg-primary/10 text-primary">
-                DC
-              </AvatarFallback>
-            </Avatar>
+            <div className="w-40 h-40 border-4 border-primary/20 rounded-full overflow-hidden">
+              <img
+                src="/imgs/suitme.png"
+                alt="Dario Casavecchia"
+                className="w-full h-full object-cover"
+                style={{ objectPosition: '50% 35%' }}
+              />
+            </div>
             <div className="flex flex-wrap justify-center md:justify-start gap-6">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center md:text-left">
