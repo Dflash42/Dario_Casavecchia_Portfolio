@@ -26,17 +26,19 @@ const ContactSection = () => {
           className="space-y-8"
         >
           {/* Download CV */}
-          <div className="flex justify-center">
-            <Button size="lg" asChild className="gap-2">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <Button size="lg" asChild className="gap-2 w-full sm:w-auto">
               <a href="/cv.pdf" download>
                 <Download size={18} /> Download My CV
               </a>
             </Button>
-          </div>
-          {/* linkedin di fianco al tasto download cv*/}
-          <div className="flex justify-center">
-            <Button size="lg" asChild className="gap-2">
-              <a href="https://www.linkedin.com/in/dario-casavecchia-b8a0b8b8a/" download>
+
+            <Button size="lg" asChild className="gap-2 w-full sm:w-auto">
+              <a
+                href="https://www.linkedin.com/in/dario-casavecchia-b8a0b8b8a/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Linkedin size={18} /> My LinkedIn
               </a>
             </Button>
