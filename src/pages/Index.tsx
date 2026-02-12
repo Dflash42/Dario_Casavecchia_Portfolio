@@ -5,10 +5,12 @@ import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import CursorGlow from "@/components/CursorGlow";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <CursorGlow />
       <Header />
       <main>
         <HeroSection />
