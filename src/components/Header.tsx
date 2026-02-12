@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const navItems = [
-  { label: "About", href: "#about" },
+  { label: "About Me", href: "#about-me" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contacts", href: "#contacts" },
 ];
 
 const sectionIds = navItems.map((item) => item.href.slice(1));
@@ -54,15 +54,14 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-sm"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-sm"
+        : "bg-transparent"
+        }`}
     >
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         <a href="#" className="text-xl font-bold font-['Space_Grotesk'] text-foreground">
-          JD<span className="text-primary">.</span>
+          DC<span className="text-primary">.</span>
         </a>
 
         {/* Desktop nav */}
@@ -72,11 +71,10 @@ const Header = () => {
               key={item.href}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className={`relative text-sm font-medium transition-colors duration-200 ${
-                activeSection === item.href.slice(1)
-                  ? "text-primary"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
+              className={`relative text-sm font-medium transition-colors duration-200 ${activeSection === item.href.slice(1)
+                ? "text-primary"
+                : "text-muted-foreground hover:text-foreground"
+                }`}
             >
               {item.label}
               {activeSection === item.href.slice(1) && (
@@ -107,11 +105,10 @@ const Header = () => {
               key={item.href}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className={`text-sm font-medium transition-colors duration-200 ${
-                activeSection === item.href.slice(1)
-                  ? "text-primary"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
+              className={`text-sm font-medium transition-colors duration-200 ${activeSection === item.href.slice(1)
+                ? "text-primary"
+                : "text-muted-foreground hover:text-foreground"
+                }`}
             >
               {item.label}
             </a>
