@@ -77,10 +77,10 @@ const HeroSection = () => {
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <Github size={22} />
               </a>
-              <a href="https://www.linkedin.com/in/dario-casavecchia/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/in/dario-casavecchia" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <Linkedin size={22} />
               </a>
-              <a href="mailto:john@example.com" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:[EMAIL_ADDRESS]" className="text-muted-foreground hover:text-primary transition-colors">
                 <Mail size={22} />
               </a>
             </motion.div>
