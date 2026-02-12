@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -10,15 +10,47 @@ const navItems = [
   { label: "Contact", href: "#contact" },
 ];
 
+const sectionIds = navItems.map((item) => item.href.slice(1));
+
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const el = document.querySelector(href);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    setMobileOpen(false);
+  };
 
   return (
     <header
@@ -39,14 +71,22 @@ const Header = () => {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              onClick={(e) => handleNavClick(e, item.href)}
+              className={`relative text-sm font-medium transition-colors duration-200 ${
+                activeSection === item.href.slice(1)
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               {item.label}
+              {activeSection === item.href.slice(1) && (
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full animate-fade-in" />
+              )}
             </a>
           ))}
           <ThemeToggle />
           <Button size="sm" asChild>
-            <a href="#contact">Let's Talk</a>
+            <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>Let's Talk</a>
           </Button>
         </nav>
 
@@ -66,15 +106,19 @@ const Header = () => {
             <a
               key={item.href}
               href={item.href}
-              onClick={() => setMobileOpen(false)}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              onClick={(e) => handleNavClick(e, item.href)}
+              className={`text-sm font-medium transition-colors duration-200 ${
+                activeSection === item.href.slice(1)
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               {item.label}
             </a>
           ))}
           <ThemeToggle />
           <Button size="sm" asChild>
-            <a href="#contact" onClick={() => setMobileOpen(false)}>Let's Talk</a>
+            <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>Let's Talk</a>
           </Button>
         </nav>
       )}
