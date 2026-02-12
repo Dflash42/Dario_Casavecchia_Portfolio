@@ -73,7 +73,7 @@ const HeroSection = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="flex gap-5"
             >
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://github.com/Dflash42" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <Github size={22} />
               </a>
               <a href="https://www.linkedin.com/in/dario-casavecchia" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
