@@ -20,7 +20,7 @@ const AboutSection = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.3 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-2">
             About Me<span className="text-primary">.</span>
@@ -33,8 +33,8 @@ const AboutSection = () => {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: false, amount: 0.3 }}
             className="flex flex-col items-center md:items-start gap-8"
           >
             <div className="w-40 h-40 border-4 border-primary/20 rounded-full overflow-hidden">
@@ -59,8 +59,8 @@ const AboutSection = () => {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: false, amount: 0.3 }}
             className="md:col-span-2"
           >
             <p className="text-muted-foreground mb-4 leading-relaxed">

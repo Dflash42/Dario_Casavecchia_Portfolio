@@ -60,7 +60,7 @@ const ExperienceSection = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.3 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-2">
             Career & Education<span className="text-primary">.</span>
@@ -73,7 +73,7 @@ const ExperienceSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.3 }}
           className="flex gap-4 mb-12 flex-wrap"
         >
           <button
@@ -149,7 +149,7 @@ const ExperienceSection = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.3 }}
           className="mt-16"
         >
           <div className="flex items-center gap-3 mb-8">
@@ -166,7 +166,7 @@ const ExperienceSection = () => {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.3 }}
               >
                 <Card className="hover:shadow-lg transition-shadow">
                   <CardContent className="p-6">
