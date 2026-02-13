@@ -7,8 +7,8 @@ const projects = [
     title: "Project Work ITS Analysis",
     description: "An institutional dashboard for ITS Academy Angelo Rizzoli tracking student enrollment, course growth, and company partnerships from 2019 to 2024.",
     tags: ["PowerBi", "Python", "Azure", "Postan", "API"],
-    image: "/imgs/pw.png",
-    pdfLink: "/slides/pw.pdf"
+    image: "/imgs/fta4.png",
+    pdfLink: "/slides/fta.pdf"
   },
   {
     title: "Pizza Business Intelligence",
