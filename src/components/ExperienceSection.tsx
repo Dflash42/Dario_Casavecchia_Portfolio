@@ -17,7 +17,7 @@ const experiences = [
     company: "StartupXYZ",
     period: "2020 – 2022",
     description:
-      "Built and shipped 3 customer-facing products from scratch using React, Node.js, and PostgreSQL. Reduced page load times by 40%.",
+      "",
     link: "https://www.linkedin.com/company/startupxyz",
   },
 ];
