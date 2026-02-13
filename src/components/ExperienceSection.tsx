@@ -5,12 +5,12 @@ import { Briefcase, GraduationCap, Languages, ExternalLink } from "lucide-react"
 
 const experiences = [
   {
-    role: "Data Analyst",
-    company: "TechCorp Inc.",
-    period: "2022 – Present",
+    role: "Data Engineer",
+    company: "STORViX AB",
+    period: "Jan 2026 – Present",
     description:
-      "Lead development of microservices architecture serving 1M+ users. Mentored junior developers and implemented CI/CD pipelines.",
-    link: "https://www.linkedin.com/company/techcorp",
+      "",
+    link: "https://www.linkedin.com/company/storvix/",
   },
   {
     role: "Full-Stack Developer",
