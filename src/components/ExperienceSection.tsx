@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { useState } from "react";
-import { Briefcase, GraduationCap, Languages } from "lucide-react";
+import { Briefcase, GraduationCap, Languages, ExternalLink } from "lucide-react";
 
 const experiences = [
   {
@@ -10,6 +10,7 @@ const experiences = [
     period: "2022 – Present",
     description:
       "Lead development of microservices architecture serving 1M+ users. Mentored junior developers and implemented CI/CD pipelines.",
+    link: "https://www.linkedin.com/company/techcorp",
   },
   {
     role: "Full-Stack Developer",
@@ -17,6 +18,7 @@ const experiences = [
     period: "2020 – 2022",
     description:
       "Built and shipped 3 customer-facing products from scratch using React, Node.js, and PostgreSQL. Reduced page load times by 40%.",
+    link: "https://www.linkedin.com/company/startupxyz",
   },
 ];
 
@@ -27,6 +29,7 @@ const studies = [
     period: "2020 – 2022",
     description:
       "Specialized in machine learning, statistical analysis, and big data processing. Thesis on predictive analytics.",
+    link: "https://www.university-of-technology.edu",
   },
   {
     degree: "Bachelor in Computer Science",
@@ -34,6 +37,7 @@ const studies = [
     period: "2016 – 2020",
     description:
       "Core curriculum in algorithms, databases, and software engineering. Graduated with honors.",
+    link: "https://www.stateuniversity.edu",
   },
 ];
 
@@ -111,23 +115,31 @@ const ExperienceSection = () => {
               {/* Dot */}
               <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-primary rounded-full -translate-x-1.5 top-6 z-10 ring-4 ring-background" />
 
-              <Card
-                className={`ml-12 md:ml-0 md:w-[calc(50%-2rem)] hover:shadow-lg transition-shadow ${i % 2 === 0 ? "md:mr-auto md:mr-8" : "md:ml-auto md:ml-8"
-                  }`}
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`block ml-12 md:ml-0 md:w-[calc(50%-2rem)] ${i % 2 === 0 ? "md:mr-auto md:mr-8" : "md:ml-auto md:ml-8"}`}
               >
-                <CardContent className="p-6">
-                  <span className="text-xs font-medium text-primary">{item.period}</span>
-                  <h3 className="text-lg font-semibold text-foreground mt-1">
-                    {"role" in item ? item.role : item.degree}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-2">
-                    {"company" in item ? item.company : item.institution}
-                  </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {item.description}
-                  </p>
-                </CardContent>
-              </Card>
+                <Card className="group hover:shadow-xl hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                  <CardContent className="p-6 relative">
+                    <ExternalLink
+                      size={14}
+                      className="absolute top-4 right-4 text-muted-foreground/0 group-hover:text-muted-foreground transition-all duration-300"
+                    />
+                    <span className="text-xs font-medium text-primary">{item.period}</span>
+                    <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mt-1">
+                      {"role" in item ? item.role : item.degree}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-2">
+                      {"company" in item ? item.company : item.institution}
+                    </p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {item.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </a>
             </motion.div>
           ))}
         </div>
