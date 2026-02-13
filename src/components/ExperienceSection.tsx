@@ -24,20 +24,20 @@ const experiences = [
 
 const studies = [
   {
-    degree: "Master in Data Science",
-    institution: "University of Technology",
-    period: "2020 – 2022",
+    degree: "Higher VET Certificate in Big Data Analytics",
+    institution: "ITS Angelo Rizzoli",
+    period: "2024 – Present",
     description:
-      "Specialized in machine learning, statistical analysis, and big data processing. Thesis on predictive analytics.",
-    link: "https://www.university-of-technology.edu",
+      "",
+    link: "https://www.itsrizzoli.it/",
   },
   {
-    degree: "Bachelor in Computer Science",
-    institution: "State University",
-    period: "2016 – 2020",
+    degree: "High School Diploma",
+    institution: "ISS Francesco Viganò",
+    period: "2018 – 2023",
     description:
-      "Core curriculum in algorithms, databases, and software engineering. Graduated with honors.",
-    link: "https://www.stateuniversity.edu",
+      "",
+    link: "https://www.issvigano.edu.it/",
   },
 ];
 
