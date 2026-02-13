@@ -97,7 +97,7 @@ const HeroSection = () => {
               <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-primary/30 via-accent/20 to-primary/10 blur-sm" />
               <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-2 border-primary/20 shadow-2xl shadow-primary/10">
                 <img
-                  src="/imgs/suitme1.png"
+                  src="/imgs/suitme.png"
                   alt="Dario Casavecchia"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: "50% 35%" }}
