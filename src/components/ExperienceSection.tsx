@@ -139,12 +139,14 @@ const ExperienceSection = () => {
             />
             {/* Glowing pulse traveling down the line */}
             <motion.div
-              className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-transparent via-primary/60 to-transparent"
-              initial={{ y: "-100%" }}
-              animate={isInView ? { y: "600%" } : { y: "-100%" }}
+              className="absolute left-0 w-full h-16 bg-gradient-to-b from-transparent via-primary/60 to-transparent"
+              initial={{ top: 0, y: "-100%" }}
+              animate={isInView ? { top: "100%", y: "100%" } : { top: 0, y: "-100%" }}
               transition={{
                 duration: 2,
-                ease: "easeInOut",
+                ease: "linear",
+                repeat: Infinity,
+                repeatDelay: 1,
               }}
             />
           </motion.div>
