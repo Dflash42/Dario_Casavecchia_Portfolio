@@ -22,7 +22,7 @@ const experiences = [
     role: "Financial Accountant",
     company: "Dott. Galbusera's Private Practice",
     period: "Feb 2022 – Mar 2022",
-    description: "80-hour professional internship in accounting operations including F24 tax verifications, corporate financial reclassification, and CU income reconciliation.",
+    description: "80-hour professional internship in accounting operations.",
   },
 ];
 
@@ -31,14 +31,14 @@ const studies = [
     degree: "Higher VET Certificate in Big Data Analytics",
     institution: "ITS Angelo Rizzoli",
     period: "2024 – Present",
-    description: "",
+    description: "Inter-disciplinary programmes and qualifications involving Information and Communication Technologies (ICTs) , Database and network design and administration ",
     link: "https://www.itsrizzoli.it/",
   },
   {
     degree: "High School Diploma",
     institution: "ISS Francesco Viganò",
     period: "2018 – 2023",
-    description: "",
+    description: "Management and administration , Business, administration and law not elsewhere classified , Finance, banking and insurance , Secretarial and office work",
     link: "https://www.issvigano.edu.it/",
   },
 ];
