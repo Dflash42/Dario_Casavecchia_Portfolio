@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Briefcase, GraduationCap, Languages, ExternalLink } from "lucide-react";
 
 const experiences = [
@@ -8,16 +8,14 @@ const experiences = [
     role: "Data Engineer",
     company: "STORViX AB",
     period: "Jan 2026 – Present",
-    description:
-      "",
+    description: "",
     link: "https://www.linkedin.com/company/storvix/",
   },
   {
     role: "Full-Stack Developer",
     company: "StartupXYZ",
     period: "2020 – 2022",
-    description:
-      "",
+    description: "",
     link: "https://www.linkedin.com/company/startupxyz",
   },
 ];
@@ -27,16 +25,14 @@ const studies = [
     degree: "Higher VET Certificate in Big Data Analytics",
     institution: "ITS Angelo Rizzoli",
     period: "2024 – Present",
-    description:
-      "",
+    description: "",
     link: "https://www.itsrizzoli.it/",
   },
   {
     degree: "High School Diploma",
     institution: "ISS Francesco Viganò",
     period: "2018 – 2023",
-    description:
-      "",
+    description: "",
     link: "https://www.issvigano.edu.it/",
   },
 ];
@@ -50,11 +46,36 @@ const languages = [
 
 const ExperienceSection = () => {
   const [activeTab, setActiveTab] = useState<"experience" | "studies">("experience");
+  const [tabDirection, setTabDirection] = useState(1);
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const isInView = useInView(sectionRef, { amount: 0.2 });
+
+  const handleTabChange = (tab: "experience" | "studies") => {
+    setTabDirection(tab === "studies" ? 1 : -1);
+    setActiveTab(tab);
+  };
 
   const currentData = activeTab === "experience" ? experiences : studies;
 
+  // Tab slide variants
+  const tabContentVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 60 : -60,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction: number) => ({
+      x: direction > 0 ? -60 : 60,
+      opacity: 0,
+    }),
+  };
+
   return (
-    <section id="experience" className="py-24 px-6 bg-muted/30">
+    <section ref={sectionRef} id="experience" className="py-24 px-6 bg-muted/30">
       <div className="container mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -77,7 +98,7 @@ const ExperienceSection = () => {
           className="flex gap-4 mb-12 flex-wrap"
         >
           <button
-            onClick={() => setActiveTab("experience")}
+            onClick={() => handleTabChange("experience")}
             className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all ${activeTab === "experience"
               ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
               : "bg-card text-muted-foreground hover:bg-card/80 hover:text-foreground"
@@ -87,7 +108,7 @@ const ExperienceSection = () => {
             Experience
           </button>
           <button
-            onClick={() => setActiveTab("studies")}
+            onClick={() => handleTabChange("studies")}
             className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all ${activeTab === "studies"
               ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
               : "bg-card text-muted-foreground hover:bg-card/80 hover:text-foreground"
@@ -99,49 +120,90 @@ const ExperienceSection = () => {
         </motion.div>
 
         {/* Timeline */}
-        <div className="relative mb-16">
-          {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
-
-          {currentData.map((item, i) => (
+        <div ref={timelineRef} className="relative mb-16">
+          {/* Animated timeline line */}
+          <motion.div
+            className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px md:-translate-x-px overflow-hidden"
+          >
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className={`relative flex mb-10 ${i % 2 === 0 ? "md:justify-start" : "md:justify-end"
-                }`}
-            >
-              {/* Dot */}
-              <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-primary rounded-full -translate-x-1.5 top-6 z-10 ring-4 ring-background" />
+              className="w-full bg-border h-full origin-top"
+              initial={{ scaleY: 0 }}
+              animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            />
+            {/* Glowing pulse traveling down the line */}
+            <motion.div
+              className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-transparent via-primary/60 to-transparent"
+              initial={{ y: "-100%" }}
+              animate={isInView ? { y: "600%" } : { y: "-100%" }}
+              transition={{
+                duration: 2,
+                ease: "easeInOut",
+                repeat: Infinity,
+                repeatDelay: 1,
+              }}
+            />
+          </motion.div>
 
-              <a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`block ml-12 md:ml-0 md:w-[calc(50%-2rem)] ${i % 2 === 0 ? "md:mr-auto md:mr-8" : "md:ml-auto md:ml-8"}`}
-              >
-                <Card className="group hover:shadow-xl hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
-                  <CardContent className="p-6 relative">
-                    <ExternalLink
-                      size={14}
-                      className="absolute top-4 right-4 text-muted-foreground/0 group-hover:text-muted-foreground transition-all duration-300"
-                    />
-                    <span className="text-xs font-medium text-primary">{item.period}</span>
-                    <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mt-1">
-                      {"role" in item ? item.role : item.degree}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      {"company" in item ? item.company : item.institution}
-                    </p>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {item.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </a>
+          {/* Cards with AnimatePresence for tab switching */}
+          <AnimatePresence mode="wait" custom={tabDirection}>
+            <motion.div
+              key={activeTab}
+              custom={tabDirection}
+              variants={tabContentVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            >
+              {currentData.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -30 }}
+                  transition={{ duration: 0.5, delay: i * 0.12, ease: "easeOut" }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className={`relative flex mb-10 ${i % 2 === 0 ? "md:justify-start" : "md:justify-end"}`}
+                >
+                  {/* Dot */}
+                  <motion.div
+                    className="absolute left-4 md:left-1/2 w-3 h-3 bg-primary rounded-full -translate-x-1.5 top-6 z-10 ring-4 ring-background"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 0.3, delay: i * 0.12 + 0.2 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                  />
+
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block ml-12 md:ml-0 md:w-[calc(50%-2rem)] ${i % 2 === 0 ? "md:mr-auto md:mr-8" : "md:ml-auto md:ml-8"}`}
+                  >
+                    <Card className="group hover:shadow-xl hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                      <CardContent className="p-6 relative">
+                        <ExternalLink
+                          size={14}
+                          className="absolute top-4 right-4 text-muted-foreground/0 group-hover:text-muted-foreground transition-all duration-300"
+                        />
+                        <span className="text-xs font-medium text-primary">{item.period}</span>
+                        <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mt-1">
+                          {"role" in item ? item.role : item.degree}
+                        </h3>
+                        <p className="text-sm text-muted-foreground mb-2">
+                          {"company" in item ? item.company : item.institution}
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {item.description}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </a>
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
+          </AnimatePresence>
         </div>
 
         {/* Languages Section */}

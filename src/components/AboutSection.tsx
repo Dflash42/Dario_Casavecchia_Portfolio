@@ -45,9 +45,9 @@ const AboutSection = () => {
                 style={{ objectPosition: '50% 35%' }}
               />
             </div>
-            <div className="flex flex-wrap justify-center md:justify-start gap-6">
+            <div className="flex flex-wrap justify-center gap-6">
               {stats.map((stat) => (
-                <div key={stat.label} className="text-center md:text-left">
+                <div key={stat.label} className="text-center">
                   <p className="text-2xl font-bold text-foreground">{stat.value}</p>
                   <p className="text-xs text-muted-foreground">{stat.label}</p>
                 </div>
