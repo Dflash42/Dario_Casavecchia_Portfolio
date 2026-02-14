@@ -123,7 +123,7 @@ const ExperienceSection = () => {
         <div ref={timelineRef} className="relative mb-16">
           {/* Animated timeline line */}
           <motion.div
-            className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px md:-translate-x-px overflow-hidden"
+            className="absolute left-[13px] md:left-1/2 top-0 bottom-0 w-px md:-translate-x-[0.5px] overflow-hidden"
           >
             <motion.div
               className="w-full bg-border h-full origin-top"
@@ -166,7 +166,7 @@ const ExperienceSection = () => {
                 >
                   {/* Dot */}
                   <motion.div
-                    className="absolute left-4 md:left-1/2 w-3 h-3 bg-primary rounded-full -translate-x-1.5 top-6 z-10 ring-4 ring-background"
+                    className="absolute left-[8px] md:left-1/2 w-3 h-3 bg-primary rounded-full -translate-x-1/2 top-6 z-10 ring-4 ring-background"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ duration: 0.3, delay: i * 0.12 + 0.2 }}
