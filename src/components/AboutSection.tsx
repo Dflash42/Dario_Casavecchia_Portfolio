@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 
 const stats = [
   { label: "Years Experience", value: "1" },
-  { label: "Projects Completed", value: "30+" },
+  { label: "Projects Completed", value: "10+" },
 ];
 
 const skills = [
