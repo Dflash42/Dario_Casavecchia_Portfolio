@@ -58,18 +58,18 @@ const ExperienceSection = () => {
 
   const currentData = activeTab === "experience" ? experiences : studies;
 
-  // Tab slide variants
+  // Tab slide variants — vertical direction based on switch
   const tabContentVariants = {
     enter: (direction: number) => ({
-      x: direction > 0 ? 60 : -60,
+      y: direction > 0 ? 40 : -40,
       opacity: 0,
     }),
     center: {
-      x: 0,
+      y: 0,
       opacity: 1,
     },
     exit: (direction: number) => ({
-      x: direction > 0 ? -60 : 60,
+      y: direction > 0 ? -40 : 40,
       opacity: 0,
     }),
   };
@@ -139,8 +139,6 @@ const ExperienceSection = () => {
               transition={{
                 duration: 2,
                 ease: "easeInOut",
-                repeat: Infinity,
-                repeatDelay: 1,
               }}
             />
           </motion.div>
