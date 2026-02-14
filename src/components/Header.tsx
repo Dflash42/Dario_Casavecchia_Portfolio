@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ThemeToggle";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { label: "About Me", href: "#about" },
@@ -15,6 +15,12 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -125,33 +131,58 @@ const Header = () => {
         </button>
       </div>
 
+      {/* Mobile backdrop */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden fixed inset-0 top-[64px] bg-background/60 backdrop-blur-sm z-40"
+            onClick={() => setMobileOpen(false)}
+          />
+        )}
+      </AnimatePresence>
+
       {/* Mobile nav */}
-      {mobileOpen && (
-        <nav className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border px-6 pb-6 flex flex-col gap-4 animate-in slide-in-from-top-5 duration-300">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={(e) => handleNavClick(e, item.href)}
-              className={`text-sm font-medium transition-colors duration-200 ${activeSection === item.href.slice(1)
-                  ? "text-primary"
-                  : "text-muted-foreground hover:text-foreground"
-                }`}
-            >
-              {item.label}
-            </a>
-          ))}
-          <div className="flex items-center justify-between pt-2">
-            <span className="text-sm text-muted-foreground">Theme</span>
-            <ThemeToggle />
-          </div>
-          <Button size="sm" asChild className="w-full">
-            <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>
-              Let's Talk
-            </a>
-          </Button>
-        </nav>
-      )}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.nav
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="md:hidden fixed top-[64px] left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-b border-border px-6 pb-6 pt-4 flex flex-col gap-1"
+          >
+            {navItems.map((item, i) => (
+              <motion.a
+                key={item.href}
+                href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.2, delay: i * 0.05 }}
+                className={`text-base font-medium py-3 px-3 rounded-lg transition-colors duration-200 ${activeSection === item.href.slice(1)
+                    ? "text-primary bg-primary/10"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                  }`}
+              >
+                {item.label}
+              </motion.a>
+            ))}
+            <div className="flex items-center justify-between pt-3 px-3">
+              <span className="text-sm text-muted-foreground">Theme</span>
+              <ThemeToggle />
+            </div>
+            <Button size="sm" asChild className="w-full mt-2">
+              <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>
+                Let's Talk
+              </a>
+            </Button>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

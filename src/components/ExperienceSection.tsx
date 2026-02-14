@@ -129,7 +129,7 @@ const ExperienceSection = () => {
         <div ref={timelineRef} className="relative mb-16">
           {/* Animated timeline line */}
           <motion.div
-            className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-[0.5px] overflow-hidden"
+            className="absolute left-[10px] md:left-1/2 top-0 bottom-0 w-px md:-translate-x-[0.5px] overflow-hidden"
           >
             <motion.div
               className="w-full bg-border h-full origin-top"
@@ -177,7 +177,7 @@ const ExperienceSection = () => {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`block w-[calc(50%-2rem)] ${i % 2 === 0 ? "mr-auto mr-8" : "ml-auto ml-8"}`}
+                    className={`block ml-10 md:ml-0 w-[calc(100%-3rem)] md:w-[calc(50%-2rem)] ${i % 2 === 0 ? "md:mr-auto md:pr-8" : "md:ml-auto md:pl-8"}`}
                   >
                     <Card className="group hover:shadow-xl hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                       <CardContent className="p-6 relative">
