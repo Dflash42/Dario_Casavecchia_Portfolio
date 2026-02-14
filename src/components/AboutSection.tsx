@@ -64,13 +64,20 @@ const AboutSection = () => {
             className="md:col-span-2"
           >
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              I'm a passionate full-stack developer with 5+ years of experience building
-              web applications that solve real problems. I love turning complex challenges
-              into simple, beautiful, and intuitive solutions.
+              I'm a Data Engineer with a passion for turning raw data into meaningful business
+              insights. Currently at STORViX in Lund, Sweden. I specialize in financial analysis,
+              revenue forecasting, and the AVALoN project focusing on predictive models for data
+              storage. My technical toolkit includes Python, SQL, Power BI, and advanced Time Series
+              Analysis skills I developed during my Higher VET Certificate in Big Data Analytics at
+              ITS Angelo Rizzoli.
             </p>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              When I'm not coding, you'll find me exploring new technologies, contributing
-              to open-source projects, or sharing knowledge through technical blog posts.
+              What sets me apart is my diverse background: from assembling industrial inverters at
+              SECOM to financial accounting internships, I've gained a practical understanding of how
+              data impacts real-world operations. Beyond the code, I'm a natural team player—14 years
+              of basketball, many as team captain, taught me leadership, adaptability, and the value
+              of collaboration. When I'm not working with data, you'll find me cycling, hiking, or
+              exploring new restaurants.
             </p>
 
             <h3 className="text-lg font-semibold mb-4 text-foreground">Tech Stack</h3>

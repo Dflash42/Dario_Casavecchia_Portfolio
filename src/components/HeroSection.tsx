@@ -48,9 +48,10 @@ const HeroSection = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 sm:mb-10"
             >
-              I build exceptional digital experiences that live at the intersection
-              of design and engineering. Currently focused on building scalable
-              web applications.
+              Data Engineer passionate about bridging the gap between business needs and
+              technical solutions. Specialized in Time Series Analysis, predictive modeling,
+              and Business Intelligence, with a unique blend of financial acumen and data
+              science expertise.
             </motion.p>
 
             <motion.div
