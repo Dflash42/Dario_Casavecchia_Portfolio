@@ -35,7 +35,7 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex flex-col items-center md:items-start gap-8"
+            className="flex flex-col items-center gap-8"
           >
             <div className="w-40 h-40 border-4 border-primary/20 rounded-full overflow-hidden">
               <img

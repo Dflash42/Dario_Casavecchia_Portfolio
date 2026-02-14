@@ -12,11 +12,17 @@ const experiences = [
     link: "https://www.linkedin.com/company/storvix/",
   },
   {
-    role: "Full-Stack Developer",
-    company: "StartupXYZ",
-    period: "2020 – 2022",
-    description: "",
-    link: "https://www.linkedin.com/company/startupxyz",
+    role: "Product Assembler",
+    company: "SECOM Srl",
+    period: "Sep 2023 – Feb 2024",
+    description: "Performed precision assembly of inverters and cable systems for metal smelting plants, ensuring quality compliance and operational safety standards.",
+    link: "https://www.linkedin.com/company/secom-power/",
+  },
+  {
+    role: "Financial Accountant",
+    company: "Dott. Galbusera's Private Practice",
+    period: "Feb 2022 – Mar 2022",
+    description: "80-hour professional internship in accounting operations including F24 tax verifications, corporate financial reclassification, and CU income reconciliation.",
   },
 ];
 
