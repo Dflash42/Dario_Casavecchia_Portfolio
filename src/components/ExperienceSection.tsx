@@ -169,10 +169,10 @@ const ExperienceSection = () => {
                   exit={{ opacity: 0, y: -30 }}
                   transition={{ duration: 0.5, delay: i * 0.12, ease: "easeOut" }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className={`relative flex mb-10 ${i % 2 === 0 ? "md:justify-start" : "md:justify-end"}`}
+                  className={`relative flex mb-6 md:mb-10 ${i % 2 === 0 ? "md:justify-start" : "md:justify-end"}`}
                 >
                   {/* Dot */}
-                  <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-primary rounded-full -translate-x-1.5 top-6 z-10 ring-4 ring-background" />
+                  <div className="absolute left-[10px] md:left-1/2 w-3 h-3 bg-primary rounded-full -translate-x-1/2 top-6 z-10 ring-4 ring-background" />
 
                   <a
                     href={item.link}
