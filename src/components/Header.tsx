@@ -122,13 +122,41 @@ const Header = () => {
           </Button>
         </nav>
 
-        {/* Mobile toggle */}
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile toggle + theme */}
+        <div className="md:hidden flex items-center gap-3">
+          <ThemeToggle />
+          <button
+            className="text-foreground relative w-6 h-6"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            <AnimatePresence mode="wait">
+              {mobileOpen ? (
+                <motion.span
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute inset-0 flex items-center justify-center"
+                >
+                  <X size={22} />
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="menu"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute inset-0 flex items-center justify-center"
+                >
+                  <Menu size={22} />
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </button>
+        </div>
       </div>
 
       {/* Mobile backdrop */}
@@ -153,33 +181,36 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="md:hidden fixed top-[64px] left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-b border-border px-6 pb-6 pt-4 flex flex-col gap-1"
+            className="md:hidden fixed top-[64px] left-0 right-0 z-50 bg-background/98 backdrop-blur-xl border-b border-border/50 px-5 pb-5 pt-3 flex flex-col gap-0.5"
           >
             {navItems.map((item, i) => (
               <motion.a
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                initial={{ opacity: 0, y: -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.2, delay: i * 0.05 }}
-                className={`text-base font-medium py-3 px-3 rounded-lg transition-colors duration-200 ${activeSection === item.href.slice(1)
-                    ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.25, delay: i * 0.05 }}
+                className={`text-[15px] font-medium py-2.5 px-3 rounded-md transition-all duration-200 ${activeSection === item.href.slice(1)
+                    ? "text-primary bg-primary/10 font-semibold"
+                    : "text-foreground/80 active:bg-muted/50"
                   }`}
               >
                 {item.label}
               </motion.a>
             ))}
-            <div className="flex items-center justify-between pt-3 px-3">
-              <span className="text-sm text-muted-foreground">Theme</span>
-              <ThemeToggle />
-            </div>
-            <Button size="sm" asChild className="w-full mt-2">
-              <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>
-                Let's Talk
-              </a>
-            </Button>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="pt-2"
+            >
+              <Button size="sm" asChild className="w-full">
+                <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>
+                  Let's Talk
+                </a>
+              </Button>
+            </motion.div>
           </motion.nav>
         )}
       </AnimatePresence>

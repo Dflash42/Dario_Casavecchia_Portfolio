@@ -46,7 +46,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 sm:mb-10"
+              className="text-[15px] sm:text-lg text-muted-foreground max-w-[90%] sm:max-w-xl mx-auto lg:mx-0 mb-6 sm:mb-10 leading-relaxed"
             >
               Data Engineer passionate about bridging the gap between business needs and
               technical solutions. Specialized in Time Series Analysis, predictive modeling,
@@ -58,12 +58,12 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12 items-center lg:items-start"
+              className="flex flex-col sm:flex-row gap-2.5 sm:gap-4 mb-8 sm:mb-12 items-center lg:items-start w-full sm:w-auto"
             >
-              <Button size="lg" asChild className="w-full sm:w-auto">
+              <Button size="lg" asChild className="w-full sm:w-auto h-11">
                 <a href="#projects">View My Work</a>
               </Button>
-              <Button size="lg" variant="outline" asChild className="w-full sm:w-auto">
+              <Button size="lg" variant="outline" asChild className="w-full sm:w-auto h-11">
                 <a href="/cv.pdf" download>Download CV</a>
               </Button>
             </motion.div>
