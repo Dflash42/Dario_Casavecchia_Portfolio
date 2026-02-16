@@ -167,7 +167,7 @@ const Header = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden fixed inset-0 top-[64px] bg-background/60 backdrop-blur-sm z-40"
+            className="md:hidden fixed inset-0 top-[64px] bg-background/80 backdrop-blur-md z-40"
             onClick={() => setMobileOpen(false)}
           />
         )}
@@ -181,7 +181,7 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="md:hidden fixed top-[64px] left-0 right-0 z-50 bg-background/98 backdrop-blur-xl border-b border-border/50 px-5 pb-5 pt-3 flex flex-col gap-0.5"
+            className="md:hidden fixed top-[64px] left-0 right-0 z-50 bg-background border-b border-border/50 px-5 pb-5 pt-3 flex flex-col gap-0.5"
           >
             {navItems.map((item, i) => (
               <motion.a
