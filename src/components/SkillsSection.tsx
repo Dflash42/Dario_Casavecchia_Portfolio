@@ -7,7 +7,7 @@ const hardSkillCategories = [
   {
     title: "Data Engineering",
     icon: <Code2 size={18} />,
-    skills: ["Python", "SQL", "PostgreSQL", "MySQL", "MongoDB", "NoSQL"],
+    skills: ["Python", "SQL", "PostgreSQL", "MySQL", "Databricks", "MongoDB", "NoSQL"],
   },
   {
     title: "Analytics & BI",
@@ -22,7 +22,7 @@ const hardSkillCategories = [
   {
     title: "Tools & Platforms",
     icon: <Wrench size={18} />,
-    skills: ["DBeaver", "Microsoft Excel", "Scikit-learn", "Statsmodels"],
+    skills: ["Microsoft Excel", "DBeaver", "Scikit-learn", "Statsmodels"],
   },
 ];
 
