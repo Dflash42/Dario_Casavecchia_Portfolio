@@ -1,17 +1,10 @@
 import { motion } from "framer-motion";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
 
 const getAssetPath = (path: string) => `${import.meta.env.BASE_URL}${path.startsWith('/') ? path.slice(1) : path}`;
 
 const stats = [
   { label: "Years Experience", value: "1" },
   { label: "Projects Completed", value: "10+" },
-];
-
-const skills = [
-  "Python", "MySQL", "NOSQL", "MongoDB", "DBeaver", "PowerBI", "PostgreSQL", "AWS",
-  "Docker", "Microsoft Excel", "RStudio", "Git",
 ];
 
 const AboutSection = () => {
@@ -82,14 +75,6 @@ const AboutSection = () => {
               exploring new restaurants.
             </p>
 
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Tech Stack</h3>
-            <div className="flex flex-wrap gap-2">
-              {skills.map((skill) => (
-                <Badge key={skill} variant="secondary" className="text-sm px-3 py-1">
-                  {skill}
-                </Badge>
-              ))}
-            </div>
           </motion.div>
         </div>
       </div>
