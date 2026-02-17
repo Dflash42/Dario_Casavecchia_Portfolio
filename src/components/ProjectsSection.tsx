@@ -8,7 +8,7 @@ const getAssetPath = (path: string) => `${import.meta.env.BASE_URL}${path.starts
 const projects = [
   {
     title: "Project Work FTA Analysis",
-    description: "An institutional dashboard for ITS Academy Angelo Rizzoli tracking student enrollment, course growth, and company partnerships from 2019 to 2024.",
+    description: "An institutional dashboard for an italian tech school tracking student enrollment, course growth, and company partnerships from 2019 to 2024.",
     tags: ["PowerBi", "Python", "Azure", "Postan", "API"],
     image: getAssetPath("imgs/fta.png"),
     pdfLink: getAssetPath("slides/fta.pdf")
@@ -36,7 +36,7 @@ const projects = [
   },
   {
     title: "NBA Salaries Analysis",
-    description: "This presentation applies statistical models to NBA salaries, analyzing distributions and performing regression tests on variables like True Shooting % and Age. It concludes that these factors significantly but only partially influence player earnings.",
+    description: "This project applies statistical models to NBA salaries, analyzing distributions and performing regression tests on variables like True Shooting % and Age. It concludes that these factors significantly but only partially influence player earnings.",
     tags: ["Excell", "Python", "R", "RStudio"],
     image: getAssetPath("imgs/nbasalaries.png"),
     pdfLink: getAssetPath("slides/nbasalaries.pdf")
