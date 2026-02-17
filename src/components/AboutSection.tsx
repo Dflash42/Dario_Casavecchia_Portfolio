@@ -76,7 +76,7 @@ const AboutSection = () => {
             <p className="text-muted-foreground mb-8 leading-relaxed">
               What sets me apart is my diverse background: from assembling industrial inverters at
               SECOM to financial accounting internships, I've gained a practical understanding of how
-              data impacts real-world operations. Beyond the code, I'm a natural team player—14 years
+              data impacts real-world operations. Beyond the code, I'm a natural team player: 14 years
               of basketball, many as team captain, taught me leadership, adaptability, and the value
               of collaboration. When I'm not working with data, you'll find me cycling, hiking, or
               exploring new restaurants.

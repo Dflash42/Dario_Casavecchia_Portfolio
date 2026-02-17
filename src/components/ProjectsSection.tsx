@@ -7,7 +7,7 @@ const getAssetPath = (path: string) => `${import.meta.env.BASE_URL}${path.starts
 
 const projects = [
   {
-    title: "Project Work ITS Analysis",
+    title: "Project Work FTA Analysis",
     description: "An institutional dashboard for ITS Academy Angelo Rizzoli tracking student enrollment, course growth, and company partnerships from 2019 to 2024.",
     tags: ["PowerBi", "Python", "Azure", "Postan", "API"],
     image: getAssetPath("imgs/fta.png"),
