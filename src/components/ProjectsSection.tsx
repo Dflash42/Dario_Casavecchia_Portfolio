@@ -3,48 +3,50 @@ import { useRef, useState, useCallback } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
+const getAssetPath = (path: string) => `${import.meta.env.BASE_URL}${path.startsWith('/') ? path.slice(1) : path}`;
+
 const projects = [
   {
     title: "Project Work ITS Analysis",
     description: "An institutional dashboard for ITS Academy Angelo Rizzoli tracking student enrollment, course growth, and company partnerships from 2019 to 2024.",
     tags: ["PowerBi", "Python", "Azure", "Postan", "API"],
-    image: "/imgs/fta.png",
-    pdfLink: "/slides/fta.pdf"
+    image: getAssetPath("imgs/fta.png"),
+    pdfLink: getAssetPath("slides/fta.pdf")
   },
   {
     title: "Pizza Business Intelligence",
     description: "A Power BI dashboard visualizing pizza sales metrics, including revenue, best-selling items, and peak order times to optimize business performance.",
     tags: ["PowerBi", "DAX", "Excel", "SQL", "Python"],
-    image: "/imgs/pizzabi.png",
-    pdfLink: "/slides/pizzas.pdf"
+    image: getAssetPath("imgs/pizzabi.png"),
+    pdfLink: getAssetPath("slides/pizzas.pdf")
   },
   {
     title: "Analysis of Monthly Fish Births in the Pacific",
     description: "A time series analysis of Pacific fish births (1968-1987) using SARIMA models to forecast cyclical trends and handle data anomalies.",
     tags: ["Python", "Pandas", "Matplotlib", "Seaborn", "Scikit-learn", "Statsmodels"],
-    image: "/imgs/esamepesci.png",
-    pdfLink: "/slides/esame_pesci.pdf"
+    image: getAssetPath("imgs/esamepesci.png"),
+    pdfLink: getAssetPath("slides/esame_pesci.pdf")
   },
   {
     title: "Truck Sales Analysis",
     description: "A predictive modeling project using SARIMA to forecast monthly truck sales, featuring seasonal decomposition and accuracy validation.",
     tags: ["Python", "Pandas", "Matplotlib", "Seaborn", "Scikit-learn", "Statsmodels"],
-    image: "/imgs/trucksales.png",
-    pdfLink: "/slides/progetto1.pdf"
+    image: getAssetPath("imgs/trucksales.png"),
+    pdfLink: getAssetPath("slides/progetto1.pdf")
   },
   {
     title: "NBA Salaries Analysis",
     description: "This presentation applies statistical models to NBA salaries, analyzing distributions and performing regression tests on variables like True Shooting % and Age. It concludes that these factors significantly but only partially influence player earnings.",
     tags: ["Excell", "Python", "R", "RStudio"],
-    image: "/imgs/nbasalaries.png",
-    pdfLink: "/slides/nbasalaries.pdf"
+    image: getAssetPath("imgs/nbasalaries.png"),
+    pdfLink: getAssetPath("slides/nbasalaries.pdf")
   },
   {
     title: "Efficency Analysis of the NBA Players",
     description: "This project analyzes the 2023-24 NBA season efficiency of four key players using statistical variables and boxplots. It applies probability rules, including Bayes' theorem, to solve real-world problems regarding player performance and match results.",
     tags: ["Excell", "Python", "R", "RStudio"],
-    image: "/imgs/stats.png",
-    pdfLink: "/slides/Stats.pdf"
+    image: getAssetPath("imgs/stats.png"),
+    pdfLink: getAssetPath("slides/Stats.pdf")
   },
 ];
 

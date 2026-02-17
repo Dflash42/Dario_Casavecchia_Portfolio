@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 
+const getAssetPath = (path: string) => `${import.meta.env.BASE_URL}${path.startsWith('/') ? path.slice(1) : path}`;
+
 const stats = [
   { label: "Years Experience", value: "1" },
   { label: "Projects Completed", value: "10+" },
@@ -39,7 +41,7 @@ const AboutSection = () => {
           >
             <div className="w-40 h-40 border-4 border-primary/20 rounded-full overflow-hidden">
               <img
-                src="/imgs/suitme.png"
+                src={getAssetPath("imgs/suitme.png")}
                 alt="Dario Casavecchia"
                 className="w-full h-full object-cover"
                 style={{ objectPosition: '50% 35%' }}

@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const getAssetPath = (path: string) => `${import.meta.env.BASE_URL}${path.startsWith('/') ? path.slice(1) : path}`;
+
 const HeroSection = () => {
   return (
     <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden px-4 sm:px-6 pt-20 sm:pt-0">
@@ -64,7 +66,7 @@ const HeroSection = () => {
                 <a href="#projects">View My Work</a>
               </Button>
               <Button size="lg" variant="outline" asChild className="w-full sm:w-auto h-11">
-                <a href="/cv.pdf" download>Download CV</a>
+                <a href={getAssetPath("cv.pdf")} download>Download CV</a>
               </Button>
             </motion.div>
 
@@ -98,7 +100,7 @@ const HeroSection = () => {
               <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-primary/30 via-accent/20 to-primary/10 blur-sm" />
               <div className="relative w-40 h-40 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-2 border-primary/20 shadow-2xl shadow-primary/10">
                 <img
-                  src="/imgs/suitme.png"
+                  src={getAssetPath("imgs/suitme.png")}
                   alt="Dario Casavecchia"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: "50% 35%" }}
