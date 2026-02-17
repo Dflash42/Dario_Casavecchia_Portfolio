@@ -29,11 +29,11 @@ const hardSkillCategories = [
 const softSkills = [
   {
     title: "Leadership",
-    description: "14 years of basketball, many as team captain — leading by example and motivating others.",
+    description: "14 years of basketball, many as team captain: leading by example and motivating others.",
   },
   {
     title: "Adaptability",
-    description: "From financial accounting to industrial assembly to data engineering — thriving in diverse environments.",
+    description: "From financial accounting to industrial assembly to data engineering: thriving in diverse environments.",
   },
   {
     title: "Team Collaboration",
@@ -42,10 +42,6 @@ const softSkills = [
   {
     title: "Analytical Thinking",
     description: "Breaking down complex problems into actionable insights with a structured, data-driven approach.",
-  },
-  {
-    title: "Communication",
-    description: "Presenting technical findings to non-technical stakeholders clearly and effectively.",
   },
   {
     title: "Continuous Learning",
