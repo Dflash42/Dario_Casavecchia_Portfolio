@@ -5,7 +5,7 @@ import { Briefcase, GraduationCap, Languages, ExternalLink } from "lucide-react"
 
 const experiences = [
   {
-    role: "Data Engineer",
+    role: "Data Scientist",
     company: "STORViX AB",
     period: "Jan 2026 – Present",
     description: "",
@@ -28,7 +28,7 @@ const experiences = [
 
 const studies = [
   {
-    degree: "Higher VET Certificate in Big Data Analytics",
+    degree: "Higher VET Certificate in Big Data Analysis",
     institution: "ITS Angelo Rizzoli",
     period: "2024 – Present",
     description: "Inter-disciplinary programmes and qualifications involving Information and Communication Technologies (ICTs) , Database and network design and administration ",
