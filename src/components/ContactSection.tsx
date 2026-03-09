@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Download, Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const getAssetPath = (path: string) => `${import.meta.env.BASE_URL}${path.startsWith('/') ? path.slice(1) : path}`;
+
 const ContactSection = () => {
   return (
     <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 bg-muted/30">
@@ -28,7 +30,7 @@ const ContactSection = () => {
           {/* Download CV */}
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <Button size="lg" asChild className="gap-2 w-full sm:w-auto">
-              <a href="/cv.pdf" download>
+              <a href={getAssetPath("cv.pdf")} download>
                 <Download size={18} /> Download My CV
               </a>
             </Button>

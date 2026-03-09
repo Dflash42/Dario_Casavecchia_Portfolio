@@ -32,7 +32,7 @@ const projects = [
     description: "A predictive modeling project using SARIMA to forecast monthly truck sales, featuring seasonal decomposition and accuracy validation.",
     tags: ["Python", "Pandas", "Matplotlib", "Seaborn", "Scikit-learn", "Statsmodels"],
     image: getAssetPath("imgs/trucksales.png"),
-    pdfLink: getAssetPath("slides/progetto1.pdf")
+    pdfLink: getAssetPath("slides/Truck_Sales.pdf")
   },
   {
     title: "NBA Salaries Analysis",
