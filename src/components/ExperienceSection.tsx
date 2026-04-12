@@ -8,7 +8,7 @@ const experiences = [
     role: "Data Scientist",
     company: "STORViX AB",
     period: "Jan 2026 – Present",
-    description: "",
+    description: "Co‑developing Archimedes/ULYSSES, STORViX’s telemetry and analytics platform for AiRE storage, with Python pipelines for vector analysis, forecasting, anomaly detection and automated “AiRE Smart Alignment” reports.",
     link: "https://www.linkedin.com/company/storvix/",
   },
   {
