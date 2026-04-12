@@ -50,8 +50,8 @@ export const translations = {
         company: { en: "STORViX AB", it: "STORViX AB" },
         period: { en: "Jan 2026 – Present", it: "Gen 2026 – Presente" },
         description: {
-          en: "Co‑developing Archimedes/ULYSSES, STORViX's telemetry and analytics platform for AiRE storage, with Python pipelines for vector analysis, forecasting, anomaly detection and automated "AiRE Smart Alignment" reports.",
-          it: "Co-sviluppo di Archimedes/ULYSSES, la piattaforma di telemetria e analytics di STORViX per lo storage AiRE, con pipeline Python per analisi vettoriale, forecasting, anomaly detection e report automatizzati "AiRE Smart Alignment".",
+          en: 'Co-developing Archimedes/ULYSSES, STORViX\'s telemetry and analytics platform for AiRE storage, with Python pipelines for vector analysis, forecasting, anomaly detection and automated "AiRE Smart Alignment" reports.',
+          it: 'Co-sviluppo di Archimedes/ULYSSES, la piattaforma di telemetria e analytics di STORViX per lo storage AiRE, con pipeline Python per analisi vettoriale, forecasting, anomaly detection e report automatizzati "AiRE Smart Alignment".',
         },
         link: "https://www.linkedin.com/company/storvix/",
       },
