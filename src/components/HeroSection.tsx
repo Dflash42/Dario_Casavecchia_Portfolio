@@ -3,12 +3,14 @@ import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations } from "@/i18n/translations";
+import { useCvPath } from "@/hooks/useCvPath";
 
 const getAssetPath = (path: string) => `${import.meta.env.BASE_URL}${path.startsWith('/') ? path.slice(1) : path}`;
 
 const HeroSection = () => {
   const { t } = useLanguage();
   const h = translations.hero;
+  const cvPath = useCvPath();
 
   return (
     <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden px-4 sm:px-6 pt-20 sm:pt-0">
@@ -41,7 +43,7 @@ const HeroSection = () => {
                 <a href="#projects">{t(h.viewWork)}</a>
               </Button>
               <Button size="lg" variant="outline" asChild className="w-full sm:w-auto h-11">
-                <a href={getAssetPath("cv.pdf")} download>{t(h.downloadCv)}</a>
+                <a href={cvPath} download>{t(h.downloadCv)}</a>
               </Button>
             </motion.div>
 
