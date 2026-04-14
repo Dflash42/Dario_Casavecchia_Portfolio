@@ -6,7 +6,7 @@ const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="py-8 px-6 border-t border-border">
+    <footer className="py-8 px-6 border-t border-border/30">
       <div className="container mx-auto flex flex-col items-center gap-4">
         <div className="flex gap-5">
           <a href="https://github.com/Dflash42" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Github size={22} /></a>

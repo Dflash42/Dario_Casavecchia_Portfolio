@@ -11,10 +11,10 @@ const ContactSection = () => {
   const cvPath = useCvPath();
 
   return (
-    <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 bg-muted/30">
+    <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6">
       <div className="container mx-auto max-w-2xl">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.3 }}>
-          <h2 className="text-3xl md:text-4xl font-bold mb-2 text-center">{t(c.title)}<span className="text-primary">.</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 text-center"><span className="section-title-gradient">{t(c.title)}</span><span className="text-primary">.</span></h2>
           <div className="w-16 h-1 bg-primary rounded mx-auto mb-12" />
         </motion.div>
 
