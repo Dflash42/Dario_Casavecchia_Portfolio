@@ -7,12 +7,10 @@ import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import CursorGlow from "@/components/CursorGlow";
-import AnimatedBackground from "@/components/AnimatedBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen relative">
-      <AnimatedBackground />
+    <div className="min-h-screen">
       <CursorGlow />
       <Header />
       <main>
