@@ -12,10 +12,10 @@ const roleCycleEN = ["Data Analyst", "Data Engineer", "Problem Solver"];
 const roleCycleIT = ["Data Analyst", "Data Engineer", "Problem Solver"];
 
 const HeroSection = () => {
-  const { t, language } = useLanguage();
+  const { t, lang } = useLanguage();
   const h = translations.hero;
   const cvPath = useCvPath();
-  const roles = language === "it" ? roleCycleIT : roleCycleEN;
+  const roles = lang === "it" ? roleCycleIT : roleCycleEN;
   const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
