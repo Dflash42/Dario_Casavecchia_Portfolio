@@ -65,8 +65,8 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-        ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-sm"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-[400ms] ease-out ${scrolled
+        ? "backdrop-blur-2xl border-b border-border/50 shadow-sm bg-[hsl(220,25%,96%,0.75)] dark:bg-[hsl(222,47%,7%,0.8)]"
         : "bg-transparent"
       }`}
     >

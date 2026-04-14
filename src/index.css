@@ -93,11 +93,24 @@
   body {
     @apply text-foreground;
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, hsl(216 25% 96%) 0%, hsl(214 30% 92%) 50%, hsl(216 25% 96%) 100%);
+    background: transparent;
     min-height: 100vh;
   }
-  .dark body {
-    background: linear-gradient(160deg, hsl(222 47% 6%) 0%, hsl(220 50% 10%) 40%, hsl(225 45% 8%) 70%, hsl(222 47% 6%) 100%);
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 10%, hsl(221, 70%, 60%, 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, hsl(210, 60%, 55%, 0.06) 0%, transparent 60%),
+      linear-gradient(180deg, hsl(220, 25%, 96%) 0%, hsl(218, 30%, 91%) 100%);
+  }
+  .dark body::before {
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 10%, hsl(221, 83%, 53%, 0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, hsl(210, 76%, 45%, 0.05) 0%, transparent 60%),
+      linear-gradient(180deg, hsl(222, 47%, 7%) 0%, hsl(224, 42%, 11%) 100%);
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', sans-serif;
@@ -107,6 +120,14 @@
     color-scheme: light dark;
   }
   *, *::before, *::after {
-    transition: background-color 0.3s ease, color 0.2s ease, border-color 0.3s ease;
+    transition: background-color 0.4s ease, color 0.2s ease, border-color 0.3s ease;
+  }
+
+  /* Section title gradient */
+  .section-title-gradient {
+    background: linear-gradient(135deg, currentColor 60%, hsl(221, 83%, 53%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
