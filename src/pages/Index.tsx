@@ -14,7 +14,7 @@ const Index = () => {
     <div className="min-h-screen relative">
       <AnimatedBackground />
       <CursorGlow />
-      <main>
+      <Header />
         <HeroSection />
         <AboutSection />
         <ExperienceSection />
