@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import ScrollProgress from "./components/ScrollProgress";
 
 const queryClient = new QueryClient();
 
@@ -13,6 +14,10 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <LanguageProvider>
       <TooltipProvider>
+        <div className="bg-orb bg-orb-1" aria-hidden="true" />
+        <div className="bg-orb bg-orb-2" aria-hidden="true" />
+        <div className="bg-orb bg-orb-3" aria-hidden="true" />
+        <ScrollProgress />
         <Toaster />
         <Sonner />
         <BrowserRouter basename={import.meta.env.DEV ? "/" : "/Dario_Casavecchia_Portfolio"}>
