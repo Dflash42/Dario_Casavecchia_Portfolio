@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -7,10 +8,24 @@ import { useCvPath } from "@/hooks/useCvPath";
 
 const getAssetPath = (path: string) => `${import.meta.env.BASE_URL}${path.startsWith('/') ? path.slice(1) : path}`;
 
+const roleCycleEN = ["Data Analyst", "Data Engineer", "Problem Solver"];
+const roleCycleIT = ["Data Analyst", "Data Engineer", "Problem Solver"];
+
 const HeroSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const h = translations.hero;
   const cvPath = useCvPath();
+  const roles = language === "it" ? roleCycleIT : roleCycleEN;
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) return;
+    const interval = setInterval(() => {
+      setRoleIndex((i) => (i + 1) % roles.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, [roles.length]);
 
   return (
     <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden px-4 sm:px-6 pt-20 sm:pt-0">
@@ -30,8 +45,19 @@ const HeroSection = () => {
               Dario Casavecchia<span className="text-primary">.</span>
             </motion.h1>
 
-            <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-muted-foreground mb-4 sm:mb-6">
-              {t(h.role)}
+            <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-muted-foreground mb-4 sm:mb-6 h-[1.3em] relative overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={roles[roleIndex]}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  className="block"
+                >
+                  {roles[roleIndex]}
+                </motion.span>
+              </AnimatePresence>
             </motion.h2>
 
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} className="text-[15px] sm:text-lg text-muted-foreground max-w-[90%] sm:max-w-xl mx-auto lg:mx-0 mb-6 sm:mb-10 leading-relaxed">
