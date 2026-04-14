@@ -15,6 +15,7 @@ const Index = () => {
       <AnimatedBackground />
       <CursorGlow />
       <Header />
+      <main>
         <HeroSection />
         <AboutSection />
         <ExperienceSection />
